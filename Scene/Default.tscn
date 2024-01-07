@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0xx4tdybmr75"]
+
+[ext_resource type="Script" path="res://addons/Core/Examples/Example2DPlayer.cs" id="1_21aqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1owkm"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_a2i6f"]
+interpolation_mode = 2
+interpolation_color_space = 2
+colors = PackedColorArray(0.797897, 0.400132, 0.35862, 1, 0.595711, 0.743238, 0.52408, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l3s1c"]
+gradient = SubResource("Gradient_a2i6f")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa4gf"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_36ank"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_umxhs"]
+gradient = SubResource("Gradient_36ank")
+
+[node name="SceneRoot" type="Node2D"]
+
+[node name="Player2D" type="CharacterBody2D" parent="."]
+position = Vector2(30, -91)
+script = ExtResource("1_21aqm")
+WalkSpeed = 150.0
+RunSpeed = 300.0
+JumpForce = 400.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2D"]
+shape = SubResource("RectangleShape2D_1owkm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player2D"]
+texture = SubResource("GradientTexture2D_l3s1c")
+
+[node name="Camera2D" type="Camera2D" parent="Player2D"]
+zoom = Vector2(0.75, 0.75)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_wa4gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+texture = SubResource("GradientTexture2D_umxhs")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2(-64, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("RectangleShape2D_wa4gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2"]
+texture = SubResource("GradientTexture2D_umxhs")
+
+[node name="Ground3" type="StaticBody2D" parent="."]
+position = Vector2(128, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3"]
+shape = SubResource("RectangleShape2D_wa4gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground3"]
+texture = SubResource("GradientTexture2D_umxhs")
+
+[node name="Ground4" type="StaticBody2D" parent="."]
+position = Vector2(64, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4"]
+shape = SubResource("RectangleShape2D_wa4gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground4"]
+texture = SubResource("GradientTexture2D_umxhs")
+
+[node name="Ground5" type="StaticBody2D" parent="."]
+position = Vector2(-128, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5"]
+shape = SubResource("RectangleShape2D_wa4gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground5"]
+texture = SubResource("GradientTexture2D_umxhs")
+
+[node name="Ground6" type="StaticBody2D" parent="."]
+position = Vector2(192, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground6"]
+shape = SubResource("RectangleShape2D_wa4gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground6"]
+texture = SubResource("GradientTexture2D_umxhs")
